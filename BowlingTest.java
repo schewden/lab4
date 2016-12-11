@@ -32,4 +32,15 @@ public class BowlingTest {
         }
             assertEquals(18,bowling.score());
     }
+
+    @Test
+        public  void  testDropStrike(){
+        bowling.roll(10);
+        bowling.roll(2);
+        bowling.roll(4);
+        for (int i=0; i<17;i++){
+            bowling.roll(0);
+        }
+        assertEquals(22,bowling.score());
+    }
 }

@@ -8,6 +8,7 @@ public class Bowling {
 
     public void roll(int pins){
         rolls[thisRoll++] = pins;
+        System.out.print(pins);
     }
 
 
@@ -15,7 +16,12 @@ public class Bowling {
         int score = 0;
         int i = 0;
         for (int frame = 0; frame < 10; frame++) {
-            if (rolls[i] + rolls[i + 1] == 10)
+            if (rolls[i]  == 10)
+            {
+                score += 10 + rolls[i + 1] + rolls[i + 2];
+                i++;
+            }
+            else if (rolls[i] + rolls[i + 1] == 10)
             {
                 score += 10 + rolls[i + 2];
                 i += 2;
