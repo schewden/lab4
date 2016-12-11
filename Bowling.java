@@ -6,24 +6,20 @@ public class Bowling {
     private int thisRoll = 0;
 
 
-    public void roll(int pins){
+    public void roll(int pins) {
         rolls[thisRoll++] = pins;
-        System.out.print(pins);
     }
 
 
-    public int score(){
+    public int score() {
         int score = 0;
         int i = 0;
         for (int frame = 0; frame < 10; frame++) {
-            if (rolls[i]  == 10)
-            {
-                score += 10 + rolls[i + 1] + rolls[i + 2];
+            if (rolls[i] == 10) {
+                score += rolls[i] + rolls[i + 1] + rolls[i + 2];
                 i++;
-            }
-            else if (rolls[i] + rolls[i + 1] == 10)
-            {
-                score += 10 + rolls[i + 2];
+            } else if (rolls[i] + rolls[i + 1] == 10) {
+                score += rolls[i] + rolls[i + 1] + rolls[i + 2];
                 i += 2;
             } else {
                 score += rolls[i] + rolls[i + 1];
@@ -31,6 +27,6 @@ public class Bowling {
             }
         }
 
-            return score;
+        return score;
     }
 }
